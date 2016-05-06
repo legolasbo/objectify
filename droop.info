@@ -1,0 +1,7 @@
+name = Drupal object-oriented programming extension
+description = A purely object-oriented API for Drupal 7 development.
+package = droop
+version = 7.x-1.0.0
+core = 7.x
+
+dependencies[] = xautoload

@@ -1,0 +1,11 @@
+{
+  "name": "drupal/droop",
+  "type": "drupal-module",
+  "description": "Drupal object-oriented programming extension.",
+  "require": {
+    "composer/installers": "~1.0",
+    "symfony/dependency-injection": "~2.8.3",
+    "symfony/yaml": "~2.1",
+    "symfony/config": "~2.2"
+  }
+}
