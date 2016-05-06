@@ -1,0 +1,80 @@
+<?php
+/**
+ * @file
+ * droop_di.module
+ *
+ * The dependency injection component of droop.
+ */
+
+use Drupal\droop_di\Container;
+use Symfony\Component\Config\FileLocator;
+use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
+use Symfony\Component\DependencyInjection\ContainerBuilder;
+
+/**
+ * Get the default droop DI container.
+ *
+ * The container can be created externally and populated by
+ * droop_di_build_container(). The container built will be returned by this
+ * method, to ensure that extensions that require the container can use this
+ * without the risk of multiple containers existing within the project.
+ *
+ * @return Container
+ */
+function droop_di_get_container() {
+  $container = &drupal_static(__FUNCTION__);
+  if ($container === NULL) {
+    $container = new Container();
+    droop_di_build_container($container);
+  }
+
+  return $container;
+}
+
+/**
+ * Get a service from the container.
+ *
+ * @param string $service_id
+ *
+ * @return object
+ */
+function droop_di_get_service($service_id) {
+  $container = droop_di_get_container();
+  return $container->get($service_id);
+}
+
+/**
+ * Build the service container.
+ *
+ * @param ContainerBuilder $container
+ */
+function droop_di_build_container(ContainerBuilder &$container) {
+  drupal_alter('service_container_to_build', $container);
+
+  foreach (droop_di_get_active_extensions_by_weight() as $extension => $type) {
+    try {
+      $loader = new YamlFileLoader($container, new FileLocator(drupal_get_path($type, $extension)));
+      $loader->load("{$extension}.services.yml");
+    }
+    catch (\Exception $e) {}
+  }
+
+  drupal_alter('service_container', $this->container);
+
+  // Set the droop_di_container.
+  $static = &drupal_static('droop_di_get_container') = $container;
+}
+
+/**
+ * Get a list of active extensions, by weight.
+ *
+ * @return array
+ */
+function droop_di_get_active_extensions_by_weight() {
+  return $extensions = db_select('system', 's')
+    ->fields('s', ['name', 'type'])
+    ->condition('status', 1)
+    ->orderBy('weight, name')
+    ->execute()
+    ->fetchAllKeyed();
+}

@@ -33,7 +33,7 @@ function droop_locate_composer_dir() {
   $locations = [
     DRUPAL_ROOT . '/../vendor/composer',
     DRUPAL_ROOT . '/vendor/composer',
-    __DIR__ . '/../vendor/composer',
+    __DIR__ . '/vendor/composer',
   ];
 
   foreach ($locations as $location) {

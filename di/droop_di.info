@@ -1,0 +1,7 @@
+name = Dependency injection component
+description = Provides integration of the Symfony dependency injection component.
+package = droop
+version = 7.x-1.0.0
+core = 7.x
+
+dependencies[] = droop

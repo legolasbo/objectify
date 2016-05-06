@@ -1,0 +1,3 @@
+services:
+  droop_di.plugin_dependency_loader:
+    class: Drupal\droop_di\PluginContainerDependencyLocator
