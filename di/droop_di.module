@@ -62,7 +62,8 @@ function droop_di_build_container(ContainerBuilder &$container) {
   drupal_alter('service_container', $this->container);
 
   // Set the droop_di_container.
-  $static = &drupal_static('droop_di_get_container') = $container;
+  $static = &drupal_static('droop_di_get_container');
+  $static = $container;
 }
 
 /**
