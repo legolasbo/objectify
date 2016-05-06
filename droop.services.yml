@@ -9,6 +9,9 @@ services:
   system.logger:
     class: Drupal\droop\Logger\WatchDog
 
+  system.translation:
+    class: Drupal\droop\Translation\Translation
+
   system.breadcrumb:
     factory: ['Drupal\droop\Breadcrumb\Breadcrumb', 'createSystemBreadcrumb']
     arguments:
