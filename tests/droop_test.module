@@ -1,0 +1,21 @@
+<?php
+/**
+ * @file
+ * droop_test.module
+ */
+
+/**
+ * Implements hook_menu().
+ */
+function droop_test_menu() {
+  $items = [];
+
+  $items['test-form'] = [
+    'title' => t('Test form'),
+    'page callback' => 'drupal_get_form',
+    'page arguments' => ['Drupal\\droop_test\\Form\\TestForm'],
+    'access callback' => TRUE,
+  ];
+
+  return $items;
+}

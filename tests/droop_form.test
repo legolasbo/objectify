@@ -1,0 +1,45 @@
+<?php
+
+/**
+ * Class DroopFormTest
+ */
+class DroopFormTest extends DrupalWebTestCase {
+
+  protected $profile = 'testing';
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function getInfo() {
+    return [
+      'name' => t('Menu component test'),
+      'description' => t('Run tests for menu OO api component.'),
+      'group' => t('Droop'),
+    ];
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function setUp() {
+    parent::setUp([
+      'droop_form',
+      'droop_test',
+    ]);
+  }
+
+  /**
+   * Run tests using data defined in:
+   * @see Drupal\droop_test\Form\TestForm
+   */
+  public function testDroopForm() {
+    // Check the form is output correctly.
+    $this->drupalGet('test-form');
+    $this->assertFieldById('edit-test');
+
+    // Check the form submission works.
+    $this->drupalPost('test-form', [], t('Submit form'));
+    $this->assertText(t('This form was submitted successfully.'));
+  }
+
+}

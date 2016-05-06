@@ -5,3 +5,6 @@ version = 7.x-1.0.0
 core = 7.x
 
 dependencies[] = xautoload
+
+files[] = tests/droop_form.test
+files[] = tests/droop_menu.test

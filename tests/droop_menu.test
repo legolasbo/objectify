@@ -1,0 +1,49 @@
+<?php
+
+/**
+ * Class DroopMenuTest
+ */
+class DroopMenuTest extends DrupalWebTestCase {
+
+  protected $profile = 'testing';
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function getInfo() {
+    return [
+      'name' => t('Menu component test'),
+      'description' => t('Run tests for menu OO api component.'),
+      'group' => t('Droop'),
+    ];
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function setUp() {
+    parent::setUp([
+      'droop_menu',
+      'droop_test',
+    ]);
+  }
+
+  /**
+   * Run tests using data defined in:
+   * @see Drupal\droop_test\Controller\TestController
+   */
+  public function testDroopMenu() {
+    $this->drupalGet('test-path');
+    $this->assertText(t('Hello world!'));
+
+    $this->drupalGet('altered-test-path');
+    $this->assertText(t('Access denied'));
+
+    $user = $this->drupalCreateUser(['test permission']);
+    $this->drupalLogin($user);
+
+    $this->drupalGet('altered-test-path');
+    $this->assertText(t('Hello world!'));
+  }
+
+}
