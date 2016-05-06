@@ -7,7 +7,6 @@
 
 namespace Drupal\droop\DrupalSystem;
 
-use Drupal\droop\EntityDecorator\UserDecorator;
 use Drupal\xautoload\DrupalSystem\DrupalSystemInterface as XautoloadDrupalSystemInterface;
 
 /**
@@ -89,5 +88,24 @@ interface DrupalSystemInterface extends XautoloadDrupalSystemInterface {
    * @see drupal_get_form()
    */
   public function drupalGetForm($form_id);
+
+  /**
+   * Call a function...
+   *
+   * It's likely going to be unavoidable that there's a procedural function that
+   * needs to be called. It's pretty impossible to write a fully abstracted OO
+   * api on Drupal 7, and if that is what you are after - you may as well just
+   * use Drupal 8.
+   *
+   * Using this method, at least you have the option to mock this object; rather
+   * than being required to add Drupal to phpunit bootstrap, and allowing the
+   * function to execute it's logic during your test.
+   *
+   * Example usage
+   *   $this->system->callFunction('drupal_set_title', [$this->t('A title for a page')]);
+   * Passing a variable by reference:
+   *   $system->callFunction('another_function', [$var1, &var2_by_reference]);
+   */
+  public function callFunction($func, array $args = []);
 
 }
