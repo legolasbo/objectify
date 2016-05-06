@@ -1,0 +1,24 @@
+services:
+  droop_form.plugin_loader:
+    class: Drupal\droop_form\FormPluginLoader
+    arguments:
+     - '@service_container'
+     - '@droop_di.plugin_dependency_loader'
+
+  droop_form.alter_plugin_loader:
+    class: Drupal\droop_form\FormAlterPluginLoader
+    arguments:
+     - '@service_container'
+     - '@droop_di.plugin_dependency_loader'
+
+  droop_form.id_locator:
+    class: Drupal\droop_form\FormIdLocator
+    arguments:
+    - '@system.drupal'
+
+  droop_form.manager:
+    class: Drupal\droop_form\FormManager
+    arguments:
+     - '@droop_form.plugin_loader'
+     - '@droop_form.alter_plugin_loader'
+     - '@droop_form.id_locator'
