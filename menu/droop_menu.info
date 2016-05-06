@@ -1,0 +1,7 @@
+name = Menu route
+description = Provides an OO API for the menu system.
+package = droop
+version = 7.x-1.0.0
+core = 7.x
+
+dependencies[] = droop_di
