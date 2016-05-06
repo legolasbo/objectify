@@ -66,6 +66,11 @@ interface DrupalSystemInterface extends XautoloadDrupalSystemInterface {
   public function moduleInvokeAll($hook, $parameter = NULL, $_ = NULL);
 
   /**
+   * @see module_invoke()
+   */
+  public function moduleInvoke($module, $hook);
+
+  /**
    * @see drupal_alter().
    */
   public function drupalAlter($type, &$data, &$context1 = NULL, &$context2 = NULL, &$context3 = NULL);
@@ -79,5 +84,10 @@ interface DrupalSystemInterface extends XautoloadDrupalSystemInterface {
    * @see drupal_get_breadcrumb()
    */
   public function drupalGetBreadcrumb();
+
+  /**
+   * @see drupal_get_form()
+   */
+  public function drupalGetForm($form_id);
 
 }

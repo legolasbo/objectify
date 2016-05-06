@@ -84,6 +84,14 @@ class DrupalSystem extends XautoloadDrupalSystem implements droopDrupalSystemInt
   /**
    * {@inheritdoc}
    */
+  public function moduleInvoke($module, $hook, $parameter = NULL, $_ = NULL) {
+    $args = func_get_args();
+    return call_user_func_array('module_invoke', $args);
+  }
+
+  /**
+   * {@inheritdoc}
+   */
   public function drupalAlter($type, &$data, &$context1 = NULL, &$context2 = NULL, &$context3 = NULL) {
     $args = func_get_args();
     array_splice($args, 5);
@@ -102,6 +110,13 @@ class DrupalSystem extends XautoloadDrupalSystem implements droopDrupalSystemInt
    */
   public function drupalGetBreadcrumb() {
     return drupal_get_breadcrumb();
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function drupalGetForm($form_id) {
+    return drupal_get_form($form_id);
   }
 
   /**
