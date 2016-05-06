@@ -21,7 +21,7 @@ class PluginContainerDependencyLocator implements PluginContainerDependencyLocat
   public function initialiseInstanceOfClassByLocatingDependencies(\ReflectionClass $class,
                                                                   ContainerBuilder $container,
                                                                   array &$args = []) {
-    if ($class->implementsInterface('Drupal\\droop\\PluginDefinesDependenciesInterface')) {
+    if ($class->implementsInterface('Drupal\\droop_di\\PluginDefinesDependenciesInterface')) {
       $dependencies = call_user_func([$class->getName(), 'dependencies']);
       $args = array_merge($args, $this->resolveDependencies($container, $dependencies));
     }
