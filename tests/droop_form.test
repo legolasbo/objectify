@@ -12,8 +12,8 @@ class DroopFormTest extends DrupalWebTestCase {
    */
   public static function getInfo() {
     return [
-      'name' => t('Menu component test'),
-      'description' => t('Run tests for menu OO api component.'),
+      'name' => t('Form component test'),
+      'description' => t('Run tests for form OO api component.'),
       'group' => t('Droop'),
     ];
   }

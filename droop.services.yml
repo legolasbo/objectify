@@ -13,6 +13,6 @@ services:
     class: Drupal\droop\Translation\Translation
 
   system.breadcrumb:
-    factory: ['Drupal\droop\Breadcrumb\Breadcrumb', 'createSystemBreadcrumb']
+    factory: [Drupal\droop\Breadcrumb\Breadcrumb, createSystemBreadcrumb]
     arguments:
      - '@system.drupal'

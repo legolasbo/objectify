@@ -17,6 +17,13 @@ class TestForm extends FormBase implements PluginDefinesDependenciesInterface {
   use StringTranslationTrait;
 
   /**
+   * Drupal system service.
+   *
+   * @var DrupalSystemInterface
+   */
+  protected $system;
+
+  /**
    * {@inheritdoc}
    */
   public static function dependencies() {
