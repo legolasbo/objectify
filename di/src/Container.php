@@ -4,13 +4,13 @@
  * Dependency injection container, extends Symfony's ContainerBuilder.
  */
 
-namespace Drupal\droop_di;
+namespace Drupal\objectify_di;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 
 /**
  * Class Container
- * @package Drupal\droop
+ * @package Drupal\objectify
  */
 class Container extends ContainerBuilder implements DrupalContainerInterface {
 

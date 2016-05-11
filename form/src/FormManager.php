@@ -4,11 +4,11 @@
  * FormManager class implementation.
  */
 
-namespace Drupal\droop_form;
+namespace Drupal\objectify_form;
 
 /**
  * Class FormManager
- * @package Drupal\droop_form
+ * @package Drupal\objectify_form
  */
 class FormManager {
 
@@ -56,7 +56,7 @@ class FormManager {
 
     foreach ($this->formPluginLoader->getPlugins() as $_form_id => $class) {
       $form_definition = [
-        'callback' => 'droop_form_load_form',
+        'callback' => 'objectify_form_load_form',
         'callback arguments' => [$class->getName()],
       ];
 

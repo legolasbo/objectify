@@ -4,22 +4,23 @@
  * Drupal system class implementation.
  */
 
-namespace Drupal\droop\DrupalSystem;
+namespace Drupal\objectify\DrupalSystem;
 
 use Drupal\xautoload\DrupalSystem\DrupalSystem as XautoloadDrupalSystem;
-use Drupal\droop\DrupalSystem\DrupalSystemInterface as droopDrupalSystemInterface;
+use Drupal\objectify\DrupalSystem\DrupalSystemInterface as objectifyDrupalSystemInterface;
 
 /**
  * Class DrupalSystem
- * @package Drupal\droop
+ * @package Drupal\objectify
  */
-class DrupalSystem extends XautoloadDrupalSystem implements droopDrupalSystemInterface {
+class DrupalSystem extends XautoloadDrupalSystem implements objectifyDrupalSystemInterface {
 
   /**
    * {@inheritdoc}
    */
   public function &drupalStatic($name, $default_value = NULL, $reset = FALSE) {
-    return drupal_static($name, $default_value, $reset);
+    $value = &drupal_static($name, $default_value, $reset);
+    return $value;
   }
 
   /**

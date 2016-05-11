@@ -4,17 +4,17 @@
  * DrupalContainerInterface definition.
  */
 
-namespace Drupal\droop_di;
+namespace Drupal\objectify_di;
 
 use Symfony\Component\DependencyInjection\ContainerInterface;
-use Drupal\droop\Breadcrumb;
-use Drupal\droop\Database;
-use Drupal\droop\Logger;
-use Drupal\droop\DrupalSystem;
+use Drupal\objectify\Breadcrumb;
+use Drupal\objectify\Database;
+use Drupal\objectify\Logger;
+use Drupal\objectify\DrupalSystem;
 
 /**
  * Interface DrupalContainerInterface
- * @package Drupal\droop
+ * @package Drupal\objectify
  */
 interface DrupalContainerInterface extends ContainerInterface {
 

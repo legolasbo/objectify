@@ -1,5 +1,5 @@
 {
-  "name": "drupal/droop",
+  "name": "drupal/objectify",
   "type": "drupal-module",
   "description": "Drupal object-oriented programming extension.",
   "require": {

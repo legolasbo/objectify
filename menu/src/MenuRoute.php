@@ -4,13 +4,13 @@
  * MenuRoute implementation.
  */
 
-namespace Drupal\droop_menu;
+namespace Drupal\objectify_menu;
 
-use Drupal\droop_menu\Controller\MenuRouteControllerInterface;
+use Drupal\objectify_menu\Controller\MenuRouteControllerInterface;
 
 /**
  * Class MenuRoute
- * @package Drupal\droop_menu
+ * @package Drupal\objectify_menu
  */
 class MenuRoute {
 
@@ -93,7 +93,7 @@ class MenuRoute {
    * @return MenuRoute
    */
   public function setAction(MenuRouteControllerInterface $object, $method) {
-    $this->route['page callback'] = 'droop_menu__menu_router';
+    $this->route['page callback'] = 'objectify_menu__menu_router';
     $arguments = $this->getPageArguments();
     $this->pageRouteForwarding = new MenuRouteForwarder($object, $method);
     $this->setPageArguments($arguments);
@@ -117,7 +117,7 @@ class MenuRoute {
    * @return MenuRoute
    */
   public function setAccessAction(MenuRouteControllerInterface $object, $method) {
-    $this->route['access callback'] = 'droop_menu__menu_router';
+    $this->route['access callback'] = 'objectify_menu__menu_router';
     $arguments = $this->getPageArguments();
     $this->accessRouteForwarding = new MenuRouteForwarder($object, $method);
     $this->setAccessArguments($arguments);

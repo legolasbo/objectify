@@ -1,0 +1,18 @@
+services:
+  system.drupal:
+    class: Drupal\objectify\DrupalSystem\DrupalSystem
+
+  system.db:
+    class: Drupal\objectify\Database\DrupalDatabaseWrapper
+    factory: [Drupal\objectify\Database\DrupalDatabaseWrapperFactory, newDatabaseWrapper]
+
+  system.logger:
+    class: Drupal\objectify\Logger\WatchDog
+
+  system.translation:
+    class: Drupal\objectify\Translation\Translation
+
+  system.breadcrumb:
+    factory: [Drupal\objectify\Breadcrumb\Breadcrumb, createSystemBreadcrumb]
+    arguments:
+     - '@system.drupal'

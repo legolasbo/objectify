@@ -4,13 +4,13 @@
  * PluginContainerDependencyLocatorInterface definition.
  */
 
-namespace Drupal\droop_di;
+namespace Drupal\objectify_di;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 
 /**
  * Interface PluginContainerDependencyLocatorInterface
- * @package Drupal\droop
+ * @package Drupal\objectify
  */
 interface PluginContainerDependencyLocatorInterface {
 

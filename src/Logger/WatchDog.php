@@ -4,11 +4,11 @@
  * A logger implementation.
  */
 
-namespace Drupal\droop\Logger;
+namespace Drupal\objectify\Logger;
 
 /**
  * Class Logger
- * @package Drupal\droop
+ * @package Drupal\objectify
  */
 class WatchDog implements LoggerInterface {
 
@@ -24,7 +24,7 @@ class WatchDog implements LoggerInterface {
    *
    * @param string $module
    */
-  public function __construct($module = 'droop') {
+  public function __construct($module = 'objectify') {
     $this->module = $module;
   }
 

@@ -1,0 +1,34 @@
+<?php
+/**
+ * @file
+ * objectify_block.module
+ */
+
+/**
+ * Implements hook_block_info().
+ */
+function objectify_block_block_info() {
+  return objectify_di_get_service('objectify_block.manager')->getBlockInfos();
+}
+
+/**
+ * Implements hook_block_view_alter().
+ */
+function objectify_block_view_alter(&$array, $block) {
+  // Compensate for usual mistakes of hook_block_view returning FALSE, or NULL.
+  if (!is_array($array)) {
+    $array = [
+      'content' => NULL,
+      'subject' => NULL,
+    ];
+  }
+
+  objectify_di_get_service('objectify_block.manager')->blockViewAlter($array, $block);
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function objectify_block_form_block_admin_configure_alter(&$form, &$form_state) {
+  objectify_di_get_service('objectify_block.manager')->formBlockAdminConfigureAlter($form, $form_state);
+}

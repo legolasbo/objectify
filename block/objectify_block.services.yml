@@ -1,0 +1,12 @@
+services:
+  objectify_block.plugin_loader:
+    class: Drupal\objectify_block\BlockPluginLoader
+    arguments:
+     - '@service_container'
+     - '@objectify_di.plugin_dependency_loader'
+
+  objectify_block.manager:
+    class: Drupal\objectify_block\BlockManager
+    arguments:
+     - '@objectify_block.plugin_loader'
+     - '@system.drupal'

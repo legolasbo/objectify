@@ -7,19 +7,19 @@
  * namespace of Drupal extensions. Forms are exposed to the form API via their
  * class name, or the id defined by FormBuilderInterface::formId().
  *
- * @see \Drupal\droop\Form\FormBuilderInterface
+ * @see \Drupal\objectify\Form\FormBuilderInterface
  */
 
-namespace Drupal\droop_form;
+namespace Drupal\objectify_form;
 
-use Drupal\droop_form\Form\FormBuilderInterface;
-use Drupal\droop_di\Psr4PluginLoader;
-use Drupal\droop_di\PluginContainerDependencyLocatorInterface;
+use Drupal\objectify_form\Form\FormBuilderInterface;
+use Drupal\objectify_di\Psr4PluginLoader;
+use Drupal\objectify_di\PluginContainerDependencyLocatorInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 
 /**
  * Class FormPluginLoader
- * @package Drupal\droop\Plugin
+ * @package Drupal\objectify\Plugin
  */
 class FormPluginLoader extends Psr4PluginLoader {
 
@@ -31,7 +31,7 @@ class FormPluginLoader extends Psr4PluginLoader {
   /**
    * {@inheritdoc}
    */
-  protected $interface = 'Drupal\\droop_form\\Form\\FormBuilderInterface';
+  protected $interface = 'Drupal\\objectify_form\\Form\\FormBuilderInterface';
 
   /**
    * @var \ReflectionClass[]

@@ -1,13 +1,13 @@
 <?php
 
-namespace Drupal\droop_test\Controller;
+namespace Drupal\objectify_test\Controller;
 
-use Drupal\droop\StringTranslationTrait;
-use Drupal\droop\Translation\StringTranslationInterface;
-use Drupal\droop_di\PluginDefinesDependenciesInterface;
-use Drupal\droop_menu\Controller\MenuRouteControllerInterface;
-use Drupal\droop_menu\MenuRoute;
-use Drupal\droop_menu\MenuRouteModel;
+use Drupal\objectify\StringTranslationTrait;
+use Drupal\objectify\Translation\StringTranslationInterface;
+use Drupal\objectify_di\PluginDefinesDependenciesInterface;
+use Drupal\objectify_menu\Controller\MenuRouteControllerInterface;
+use Drupal\objectify_menu\MenuRoute;
+use Drupal\objectify_menu\MenuRouteModel;
 
 class TestController implements MenuRouteControllerInterface, PluginDefinesDependenciesInterface {
 
@@ -38,7 +38,7 @@ class TestController implements MenuRouteControllerInterface, PluginDefinesDepen
     return [
       'test permission' => [
         'title' => $this->t('An example test permission.'),
-        'description' => $this->t('This is an example test permission, plugged in via the menu component of droop.'),
+        'description' => $this->t('This is an example test permission, plugged in via the menu component of objectify.'),
       ]
     ];
   }

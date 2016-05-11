@@ -4,16 +4,16 @@
  * MenuRoutePluginLoader implementation.
  */
 
-namespace Drupal\droop_menu;
+namespace Drupal\objectify_menu;
 
-use Drupal\droop_di\PluginContainerDependencyLocatorInterface;
-use Drupal\droop_di\Psr4PluginLoader;
-use Drupal\droop_menu\Controller\MenuRouteControllerInterface;
+use Drupal\objectify_di\PluginContainerDependencyLocatorInterface;
+use Drupal\objectify_di\Psr4PluginLoader;
+use Drupal\objectify_menu\Controller\MenuRouteControllerInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 
 /**
  * Class MenuRoutePluginLoader
- * @package Drupal\droop_menu
+ * @package Drupal\objectify_menu
  */
 class MenuRoutePluginLoader extends Psr4PluginLoader {
 
@@ -25,7 +25,7 @@ class MenuRoutePluginLoader extends Psr4PluginLoader {
   /**
    * {@inheritdoc}
    */
-  protected $interface = 'Drupal\\droop_menu\\Controller\\MenuRouteControllerInterface';
+  protected $interface = 'Drupal\\objectify_menu\\Controller\\MenuRouteControllerInterface';
 
   /**
    * Internal storage for class mappings.

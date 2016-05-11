@@ -1,10 +1,10 @@
 <?php
 
-namespace Drupal\droop_menu;
+namespace Drupal\objectify_menu;
 
 /**
  * Class MenuRouteForwarder
- * @package Drupal\droop_menu
+ * @package Drupal\objectify_menu
  */
 class MenuRouteForwarder {
 

@@ -5,13 +5,13 @@
  * correctly decouple classes from Drupal.
  */
 
-namespace Drupal\droop\DrupalSystem;
+namespace Drupal\objectify\DrupalSystem;
 
 use Drupal\xautoload\DrupalSystem\DrupalSystemInterface as XautoloadDrupalSystemInterface;
 
 /**
  * Interface SystemInterface
- * @package Drupal\droop
+ * @package Drupal\objectify
  */
 interface DrupalSystemInterface extends XautoloadDrupalSystemInterface {
 

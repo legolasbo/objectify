@@ -4,11 +4,11 @@
  * A PSR-4 compliant plugin loader implementation.
  */
 
-namespace Drupal\droop_di;
+namespace Drupal\objectify_di;
 
 /**
  * Class PluginLoader
- * @package Drupal\droop_di
+ * @package Drupal\objectify_di
  */
 abstract class Psr4PluginLoader implements PluginLoaderInterface {
 
@@ -56,7 +56,7 @@ abstract class Psr4PluginLoader implements PluginLoaderInterface {
       $classes = $cache->data;
     }
     else {
-      foreach (droop_di_get_active_extensions_by_weight() as $extension => $type) {
+      foreach (objectify_di_get_active_extensions_by_weight() as $extension => $type) {
         $path = drupal_get_path($type, $extension) . $this->getPsr4NamespacePath();
         if (!$files = file_scan_directory($path, '/\.php/')) {
           continue;

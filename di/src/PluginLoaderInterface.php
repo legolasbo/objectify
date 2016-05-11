@@ -4,11 +4,11 @@
  * PluginLoaderInterface definition.
  */
 
-namespace Drupal\droop_di;
+namespace Drupal\objectify_di;
 
 /**
  * Interface PluginLoaderInterface
- * @package Drupal\droop_di
+ * @package Drupal\objectify_di
  */
 interface PluginLoaderInterface {
 

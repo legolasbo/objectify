@@ -1,16 +1,16 @@
 <?php
 
-namespace Drupal\droop_test\Form;
+namespace Drupal\objectify_test\Form;
 
-use Drupal\droop\DrupalSystem\DrupalSystemInterface;
-use Drupal\droop\StringTranslationTrait;
-use Drupal\droop\Translation\StringTranslationInterface;
-use Drupal\droop_di\PluginDefinesDependenciesInterface;
-use Drupal\droop_form\Form\FormBase;
+use Drupal\objectify\DrupalSystem\DrupalSystemInterface;
+use Drupal\objectify\StringTranslationTrait;
+use Drupal\objectify\Translation\StringTranslationInterface;
+use Drupal\objectify_di\PluginDefinesDependenciesInterface;
+use Drupal\objectify_form\Form\FormBase;
 
 /**
  * Class TestForm
- * @package Drupal\droop_test
+ * @package Drupal\objectify_test
  */
 class TestForm extends FormBase implements PluginDefinesDependenciesInterface {
 

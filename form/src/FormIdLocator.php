@@ -1,12 +1,12 @@
 <?php
 
-namespace Drupal\droop_form;
+namespace Drupal\objectify_form;
 
-use Drupal\droop\DrupalSystem\DrupalSystemInterface;
+use Drupal\objectify\DrupalSystem\DrupalSystemInterface;
 
 /**
  * Class FormAlterIdLocator
- * @package Drupal\droop_form
+ * @package Drupal\objectify_form
  */
 class FormIdLocator {
 

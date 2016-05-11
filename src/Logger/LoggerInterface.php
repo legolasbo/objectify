@@ -4,11 +4,11 @@
  * LoggerInterface definition.
  */
 
-namespace Drupal\droop\Logger;
+namespace Drupal\objectify\Logger;
 
 /**
  * Interface LoggerInterface
- * @package Drupal\droop
+ * @package Drupal\objectify
  */
 interface LoggerInterface {
 

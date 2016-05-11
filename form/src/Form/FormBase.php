@@ -4,11 +4,11 @@
  * FormBase definition.
  */
 
-namespace Drupal\droop_form\Form;
+namespace Drupal\objectify_form\Form;
 
 /**
  * Interface FormBuilderInterface
- * @package Drupal\droop\Form
+ * @package Drupal\objectify\Form
  */
 abstract class FormBase implements FormBuilderInterface {
 

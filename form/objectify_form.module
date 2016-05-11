@@ -1,14 +1,14 @@
 <?php
 /**
  * @file
- * droop_form.module
+ * objectify_form.module
  */
 
 /**
  * Implements hook_forms().
  */
-function droop_form_forms($form_id, $args) {
-  return droop_di_get_service('droop_form.manager')->getFormCallbacks($form_id, $args);
+function objectify_form_forms($form_id, $args) {
+  return objectify_di_get_service('objectify_form.manager')->getFormCallbacks($form_id, $args);
 }
 
 /**
@@ -25,11 +25,11 @@ function droop_form_forms($form_id, $args) {
  *
  * @return array
  */
-function droop_form_load_form($form, &$form_state, $form_id) {
+function objectify_form_load_form($form, &$form_state, $form_id) {
   $args = array_slice(func_get_args(), 3);
 
   return call_user_func_array(
-    [droop_di_get_service('droop_form.manager'), 'getForm'],
+    [objectify_di_get_service('objectify_form.manager'), 'getForm'],
     array_merge([$form_id, $form, &$form_state], $args)
   );
 }
@@ -37,6 +37,6 @@ function droop_form_load_form($form, &$form_state, $form_id) {
 /**
  * Implements hook_form_alter().
  */
-function droop_form_form_alter(&$form, &$form_state, $form_id) {
-  droop_di_get_service('droop_form.manager')->alterForm($form, $form_state, $form_id);
+function objectify_form_form_alter(&$form, &$form_state, $form_id) {
+  objectify_di_get_service('objectify_form.manager')->alterForm($form, $form_state, $form_id);
 }

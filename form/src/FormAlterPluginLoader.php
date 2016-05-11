@@ -6,16 +6,16 @@
  * Aggregates PSR-4 compliant classes for altering forms, and automatically
  * integrates into Drupal Form API.
  *
- * @see \Drupal\droop_form\Plugin\FormAlter\FormAlterInterface
+ * @see \Drupal\objectify_form\Plugin\FormAlter\FormAlterInterface
  */
 
-namespace Drupal\droop_form;
+namespace Drupal\objectify_form;
 
-use Drupal\droop_form\Plugin\FormAlter\FormAlterInterface;
+use Drupal\objectify_form\Plugin\FormAlter\FormAlterInterface;
 
 /**
  * Class FormAlterPluginLoader
- * @package Drupal\droop_form\Plugin
+ * @package Drupal\objectify_form\Plugin
  */
 class FormAlterPluginLoader extends FormPluginLoader {
 
@@ -27,7 +27,7 @@ class FormAlterPluginLoader extends FormPluginLoader {
   /**
    * {@inheritdoc}
    */
-  protected $interface = 'Drupal\\droop_form\\Plugin\\FormAlter\\FormAlterInterface';
+  protected $interface = 'Drupal\\objectify_form\\Plugin\\FormAlter\\FormAlterInterface';
 
   /**
    * {@inheritdoc}

@@ -1,9 +1,9 @@
 <?php
 
 /**
- * Class DroopFormTest
+ * Class ObjectifyFormTest
  */
-class DroopFormTest extends DrupalWebTestCase {
+class ObjectifyFormTest extends DrupalWebTestCase {
 
   protected $profile = 'testing';
 
@@ -14,7 +14,7 @@ class DroopFormTest extends DrupalWebTestCase {
     return [
       'name' => t('Form component test'),
       'description' => t('Run tests for form OO api component.'),
-      'group' => t('Droop'),
+      'group' => t('Objectify'),
     ];
   }
 
@@ -23,16 +23,16 @@ class DroopFormTest extends DrupalWebTestCase {
    */
   public function setUp() {
     parent::setUp([
-      'droop_form',
-      'droop_test',
+      'objectify_form',
+      'objectify_test',
     ]);
   }
 
   /**
    * Run tests using data defined in:
-   * @see Drupal\droop_test\Form\TestForm
+   * @see Drupal\objectify_test\Form\TestForm
    */
-  public function testDroopForm() {
+  public function testObjectifyForm() {
     // Check the form is output correctly.
     $this->drupalGet('test-form');
     $this->assertFieldById('edit-test');

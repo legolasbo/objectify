@@ -1,0 +1,3 @@
+services:
+  objectify_di.plugin_dependency_loader:
+    class: Drupal\objectify_di\PluginContainerDependencyLocator

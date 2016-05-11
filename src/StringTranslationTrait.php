@@ -1,12 +1,12 @@
 <?php
 
-namespace Drupal\droop;
+namespace Drupal\objectify;
 
-use Drupal\droop\Translation\StringTranslationInterface;
+use Drupal\objectify\Translation\StringTranslationInterface;
 
 /**
  * Class StringTranslationTrait
- * @package Drupal\droop
+ * @package Drupal\objectify
  */
 trait StringTranslationTrait {
 

@@ -4,14 +4,14 @@
  * PluginContainerDependencyLocator implementation.
  */
 
-namespace Drupal\droop_di;
+namespace Drupal\objectify_di;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Reference;
 
 /**
  * Class PluginContainerDependencyLocator
- * @package Drupal\droop
+ * @package Drupal\objectify
  */
 class PluginContainerDependencyLocator implements PluginContainerDependencyLocatorInterface {
 
@@ -21,7 +21,7 @@ class PluginContainerDependencyLocator implements PluginContainerDependencyLocat
   public function initialiseInstanceOfClassByLocatingDependencies(\ReflectionClass $class,
                                                                   ContainerBuilder $container,
                                                                   array &$args = []) {
-    if ($class->implementsInterface('Drupal\\droop_di\\PluginDefinesDependenciesInterface')) {
+    if ($class->implementsInterface('Drupal\\objectify_di\\PluginDefinesDependenciesInterface')) {
       $dependencies = call_user_func([$class->getName(), 'dependencies']);
       $args = array_merge($args, $this->resolveDependencies($container, $dependencies));
     }

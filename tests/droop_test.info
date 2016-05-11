@@ -1,7 +1,0 @@
-name = Drupal test extension
-description = Provides testable plugins for droop components.
-package = droop
-version = 7.x-1.0.0
-core = 7.x
-
-dependencies[] = droop

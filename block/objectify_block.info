@@ -1,0 +1,8 @@
+name = Blocks
+description = Provides an OO API for the block module.
+package = objectify
+version = 7.x-1.0.0
+core = 7.x
+
+dependencies[] = objectify_di
+dependencies[] = block

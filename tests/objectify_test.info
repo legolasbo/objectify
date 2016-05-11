@@ -1,0 +1,7 @@
+name = Drupal test extension
+description = Provides testable plugins for objectify components.
+package = objectify
+version = 7.x-1.0.0
+core = 7.x
+
+dependencies[] = objectify

@@ -1,10 +1,10 @@
 <?php
 
-namespace Drupal\droop\Translation;
+namespace Drupal\objectify\Translation;
 
 /**
  * Interface StringTranslationInterface
- * @package Drupal\droop
+ * @package Drupal\objectify
  */
 interface StringTranslationInterface {
 

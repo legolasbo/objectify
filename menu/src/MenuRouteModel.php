@@ -1,12 +1,12 @@
 <?php
 
-namespace Drupal\droop_menu;
+namespace Drupal\objectify_menu;
 
-use Drupal\droop_menu\MenuRoute;
+use Drupal\objectify_menu\MenuRoute;
 
 /**
  * Class MenuRouteModel
- * @package Drupal\droop_menu
+ * @package Drupal\objectify_menu
  */
 class MenuRouteModel {
 

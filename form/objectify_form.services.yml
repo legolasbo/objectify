@@ -1,0 +1,24 @@
+services:
+  objectify_form.plugin_loader:
+    class: Drupal\objectify_form\FormPluginLoader
+    arguments:
+     - '@service_container'
+     - '@objectify_di.plugin_dependency_loader'
+
+  objectify_form.alter_plugin_loader:
+    class: Drupal\objectify_form\FormAlterPluginLoader
+    arguments:
+     - '@service_container'
+     - '@objectify_di.plugin_dependency_loader'
+
+  objectify_form.id_locator:
+    class: Drupal\objectify_form\FormIdLocator
+    arguments:
+    - '@system.drupal'
+
+  objectify_form.manager:
+    class: Drupal\objectify_form\FormManager
+    arguments:
+     - '@objectify_form.plugin_loader'
+     - '@objectify_form.alter_plugin_loader'
+     - '@objectify_form.id_locator'

@@ -4,11 +4,11 @@
  * DrupalDatabaseWrapper implementation.
  */
 
-namespace Drupal\droop\Database;
+namespace Drupal\objectify\Database;
 
 /**
  * Class DrupalDatabaseWrapper
- * @package Drupal\droop
+ * @package Drupal\objectify
  *
  * @method \SelectQuery select($table, $alias = NULL, array $options = array())
  * @method \InsertQuery insert($table, array $options = array())

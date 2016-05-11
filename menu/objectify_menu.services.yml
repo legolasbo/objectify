@@ -1,0 +1,11 @@
+services:
+  objectify_menu.plugin_loader:
+    class: Drupal\objectify_menu\MenuRoutePluginLoader
+    arguments:
+     - '@service_container'
+     - '@objectify_di.plugin_dependency_loader'
+
+  objectify_menu.manager:
+    class: Drupal\objectify_menu\MenuRouteManager
+    arguments:
+     - '@objectify_menu.plugin_loader'

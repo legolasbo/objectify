@@ -4,11 +4,11 @@
  * PluginDefinesDependenciesInterface definition.
  */
 
-namespace Drupal\droop_di;
+namespace Drupal\objectify_di;
 
 /**
  * Interface PluginDefinesDependenciesInterface
- * @package Drupal\droop
+ * @package Drupal\objectify
  */
 interface PluginDefinesDependenciesInterface {
 

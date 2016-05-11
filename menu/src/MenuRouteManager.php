@@ -4,11 +4,11 @@
  * BlockManager class implementation.
  */
 
-namespace Drupal\droop_menu;
+namespace Drupal\objectify_menu;
 
 /**
  * Class MenuRouteManager
- * @package Drupal\droop_menu
+ * @package Drupal\objectify_menu
  */
 class MenuRouteManager {
 

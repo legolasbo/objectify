@@ -1,9 +1,9 @@
 <?php
 
 /**
- * Class DroopMenuTest
+ * Class ObjectifyMenuTest
  */
-class DroopMenuTest extends DrupalWebTestCase {
+class ObjectifyMenuTest extends DrupalWebTestCase {
 
   protected $profile = 'testing';
 
@@ -14,7 +14,7 @@ class DroopMenuTest extends DrupalWebTestCase {
     return [
       'name' => t('Menu component test'),
       'description' => t('Run tests for menu OO api component.'),
-      'group' => t('Droop'),
+      'group' => t('Objectify'),
     ];
   }
 
@@ -23,16 +23,16 @@ class DroopMenuTest extends DrupalWebTestCase {
    */
   public function setUp() {
     parent::setUp([
-      'droop_menu',
-      'droop_test',
+      'objectify_menu',
+      'objectify_test',
     ]);
   }
 
   /**
    * Run tests using data defined in:
-   * @see Drupal\droop_test\Controller\TestController
+   * @see Drupal\objectify_test\Controller\TestController
    */
-  public function testDroopMenu() {
+  public function testObjectifyMenu() {
     $this->drupalGet('test-path');
     $this->assertText(t('Hello world!'));
 

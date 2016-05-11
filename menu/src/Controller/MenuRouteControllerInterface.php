@@ -4,18 +4,21 @@
  * MenuRouteControllerInterface definition.
  */
 
-namespace Drupal\droop_menu\Controller;
+namespace Drupal\objectify_menu\Controller;
 
-use Drupal\droop_menu\MenuRouteModel;
+use Drupal\objectify_menu\MenuRoute;
+use Drupal\objectify_menu\MenuRouteModel;
 
 /**
  * Interface MenuRouteControllerInterface
- * @package Drupal\droop_menu
+ * @package Drupal\objectify_menu
  */
 interface MenuRouteControllerInterface {
 
   /**
-   * Implements hook_menu().
+   * Return an array of MenuRoute objects, keyed by menu path.
+   *
+   * @return MenuRoute[].
    */
   public function getRoutes();
 
@@ -25,7 +28,12 @@ interface MenuRouteControllerInterface {
   public function getPermissions();
 
   /**
-   * Implements hook_menu_alter().
+   * Exposes all of the menu routes in a MenuRoute model.
+   *
+   * Use $routes->alterRoute('some/route') to get a MenuRoute object, which can
+   * be manipulated.
+   *
+   * @see MenuRouteModel
    */
   public function alterRoutes(MenuRouteModel $routes);
 

@@ -1,7 +1,7 @@
 name = Forms
 description = Provides an OO API for the form system.
-package = droop
+package = objectify
 version = 7.x-1.0.0
 core = 7.x
 
-dependencies[] = droop_di
+dependencies[] = objectify_di

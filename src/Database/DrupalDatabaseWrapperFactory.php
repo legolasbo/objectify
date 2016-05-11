@@ -4,11 +4,11 @@
  * DrupalDatabaseWrapperFactory implementation.
  */
 
-namespace Drupal\droop\Database;
+namespace Drupal\objectify\Database;
 
 /**
  * Class DrupalDatabaseWrapperFactory
- * @package Drupal\droop
+ * @package Drupal\objectify
  */
 class DrupalDatabaseWrapperFactory {
 

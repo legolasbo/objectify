@@ -1,0 +1,56 @@
+<?php
+
+use Drupal\objectify_menu\MenuRouteForwarder;
+use Drupal\objectify_menu\MenuRouteModel;
+
+/**
+ * Implements hook_menu().
+ */
+function objectify_menu_menu() {
+  /** @var MenuRouteModel $items */
+  $items = objectify_di_get_service('objectify_menu.manager')->getAllMenuRoutes();
+  return $items->getItems();
+}
+
+/**
+ * Implements hook_menu_alter().
+ */
+function objectify_menu_menu_alter(&$items) {
+  $model = new MenuRouteModel($items);
+  objectify_di_get_service('objectify_menu.manager')->alterMenuRoutes($model);
+  return $items;
+}
+
+/**
+ * Implements hook_permission().
+ */
+function objectify_menu_permission() {
+  return objectify_di_get_service('objectify_menu.manager')->getPermissions();
+}
+
+/**
+ * Menu router for controller objects.
+ *
+ * Either a page callback, or an access callback. Returns FALSE (not found / no
+ * access) by default.
+ *
+ * @param \Drupal\objectify_menu\MenuRouteForwarder $route
+ *
+ * @return bool|mixed
+ */
+function objectify_menu__menu_router($route) {
+  if (!$route instanceof MenuRouteForwarder) {
+    return FALSE;
+  }
+
+  try {
+    $controller = objectify_di_get_service('objectify_menu.plugin_loader')->getPlugin($route->getPlugin());
+  }
+  catch (Exception $e) {
+    objectify_di_get_service('system.logger')->log($e->getMessage());
+    return FALSE;
+  }
+
+  $args = array_slice(func_get_args(), 1);
+  return call_user_func_array([$controller, str_replace(':', '', $route->getMethod())], $args);
+}

@@ -4,13 +4,13 @@
  * FormAlterInterface definition.
  */
 
-namespace Drupal\droop_form\Plugin\FormAlter;
+namespace Drupal\objectify_form\Plugin\FormAlter;
 
-use Drupal\droop_form\Form\FormBuilderInterface;
+use Drupal\objectify_form\Form\FormBuilderInterface;
 
 /**
  * Interface FormAlterInterface
- * @package Drupal\droop_form\Plugin\FormAlter
+ * @package Drupal\objectify_form\Plugin\FormAlter
  */
 interface FormAlterInterface extends FormBuilderInterface {
 

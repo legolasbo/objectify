@@ -4,14 +4,14 @@
  * ConfigurationController implementation.
  */
 
-namespace Drupal\droop_menu\Controller;
+namespace Drupal\objectify_menu\Controller;
 
-use Drupal\droop_menu\MenuRoute;
-use Drupal\droop_menu\MenuRouteModel;
+use Drupal\objectify_menu\MenuRoute;
+use Drupal\objectify_menu\MenuRouteModel;
 
 /**
  * Class MenuRouteController
- * @package Drupal\droop_menu\Controller
+ * @package Drupal\objectify_menu\Controller
  */
 abstract class MenuRouteController implements MenuRouteControllerInterface {
 

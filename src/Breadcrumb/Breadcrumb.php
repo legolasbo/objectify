@@ -4,13 +4,13 @@
  * Breadcrumb object api implementation.
  */
 
-namespace Drupal\droop\Breadcrumb;
+namespace Drupal\objectify\Breadcrumb;
 
-use Drupal\droop\DrupalSystem\DrupalSystemInterface;
+use Drupal\objectify\DrupalSystem\DrupalSystemInterface;
 
 /**
  * Class Breadcrumb
- * @package Drupal\droop
+ * @package Drupal\objectify
  */
 class Breadcrumb {
 
@@ -39,7 +39,7 @@ class Breadcrumb {
   /**
    * Get a new instance.
    *
-   * @return \Drupal\droop\Breadcrumb\Breadcrumb
+   * @return \Drupal\objectify\Breadcrumb\Breadcrumb
    */
   public static function create() {
     return new self();

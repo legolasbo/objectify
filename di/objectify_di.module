@@ -1,31 +1,31 @@
 <?php
 /**
  * @file
- * droop_di.module
+ * objectify_di.module
  *
- * The dependency injection component of droop.
+ * The dependency injection component of objectify.
  */
 
-use Drupal\droop_di\Container;
+use Drupal\objectify_di\Container;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 
 /**
- * Get the default droop DI container.
+ * Get the default objectify DI container.
  *
  * The container can be created externally and populated by
- * droop_di_build_container(). The container built will be returned by this
+ * objectify_di_build_container(). The container built will be returned by this
  * method, to ensure that extensions that require the container can use this
  * without the risk of multiple containers existing within the project.
  *
  * @return Container
  */
-function droop_di_get_container() {
+function objectify_di_get_container() {
   $container = &drupal_static(__FUNCTION__);
   if ($container === NULL) {
     $container = new Container();
-    droop_di_build_container($container);
+    objectify_di_build_container($container);
   }
 
   return $container;
@@ -38,8 +38,8 @@ function droop_di_get_container() {
  *
  * @return object
  */
-function droop_di_get_service($service_id) {
-  $container = droop_di_get_container();
+function objectify_di_get_service($service_id) {
+  $container = objectify_di_get_container();
   return $container->get($service_id);
 }
 
@@ -48,10 +48,10 @@ function droop_di_get_service($service_id) {
  *
  * @param ContainerBuilder $container
  */
-function droop_di_build_container(ContainerBuilder &$container) {
+function objectify_di_build_container(ContainerBuilder &$container) {
   drupal_alter('service_container_to_build', $container);
 
-  foreach (droop_di_get_active_extensions_by_weight() as $extension => $type) {
+  foreach (objectify_di_get_active_extensions_by_weight() as $extension => $type) {
     try {
       $loader = new YamlFileLoader($container, new FileLocator(drupal_get_path($type, $extension)));
       $loader->load("{$extension}.services.yml");
@@ -61,8 +61,8 @@ function droop_di_build_container(ContainerBuilder &$container) {
 
   drupal_alter('service_container', $container);
 
-  // Set the droop_di_container.
-  $static = &drupal_static('droop_di_get_container');
+  // Set the objectify_di_container.
+  $static = &drupal_static('objectify_di_get_container');
   $static = $container;
 }
 
@@ -71,7 +71,7 @@ function droop_di_build_container(ContainerBuilder &$container) {
  *
  * @return array
  */
-function droop_di_get_active_extensions_by_weight() {
+function objectify_di_get_active_extensions_by_weight() {
   return $extensions = db_select('system', 's')
     ->fields('s', ['name', 'type'])
     ->condition('status', 1)
