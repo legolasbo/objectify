@@ -7,6 +7,10 @@ use Drupal\objectify_menu\MenuRouteModel;
  * Implements hook_menu().
  */
 function objectify_menu_menu() {
+  // Hook menu is called before xautoload enters the main phase during
+  // invocations of drupal_flush_all_caches. We therefore have to make sure it
+  // has entered the main phase to prevent 'Class not found' exceptions
+  xautoload()->phaseControl->enterMainPhase();
   /** @var MenuRouteModel $items */
   $items = objectify_di_get_service('objectify_menu.manager')->getAllMenuRoutes();
   return $items->getItems();
