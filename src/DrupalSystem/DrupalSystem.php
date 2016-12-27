@@ -135,5 +135,12 @@ class DrupalSystem extends XautoloadDrupalSystem implements objectifyDrupalSyste
   public function callFunction($func, array $args = []) {
     return call_user_func_array($func, $args);
   }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function currentPath() {
+    return current_path();
+  }
   
 }

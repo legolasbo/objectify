@@ -108,4 +108,9 @@ interface DrupalSystemInterface extends XautoloadDrupalSystemInterface {
    */
   public function callFunction($func, array $args = []);
 
+  /**
+   * @see current_path()
+   */
+  public function currentPath();
+
 }
