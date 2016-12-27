@@ -116,8 +116,9 @@ class DrupalSystem extends XautoloadDrupalSystem implements objectifyDrupalSyste
   /**
    * {@inheritdoc}
    */
-  public function drupalGetForm($form_id) {
-    return drupal_get_form($form_id);
+  public function drupalGetForm($form_id, array $arguments = []) {
+    array_unshift($arguments, $form_id);
+    return $this->callFunction('drupal_get_form', $arguments);
   }
 
   /**

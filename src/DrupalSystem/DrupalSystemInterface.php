@@ -87,7 +87,7 @@ interface DrupalSystemInterface extends XautoloadDrupalSystemInterface {
   /**
    * @see drupal_get_form()
    */
-  public function drupalGetForm($form_id);
+  public function drupalGetForm($form_id, array $arguments = []);
 
   /**
    * Call a function...
