@@ -28,6 +28,17 @@ class FormElementBuilder {
   }
 
   /**
+   * @param array $options
+   * @param array $element
+   * @return array
+   */
+  private static function addOptionsToElement(array $options, array $element) {
+    $element['#options'] = $options;
+
+    return $element;
+  }
+
+  /**
    * @return array
    */
   public static function containerElement() {
@@ -55,6 +66,19 @@ class FormElementBuilder {
     $element['#default_value'] = $defaultValue;
 
     return $element;
+  }
+
+  /**
+   * @param string $title
+   * @param array $options
+   * @param bool $required
+   * @return array
+   */
+  public static function selectField($title, array $options, $required = FALSE) {
+    return self::addOptionsToElement(
+      $options,
+      self::simpleField('select', $title, $required)
+    );
   }
 
   /**
