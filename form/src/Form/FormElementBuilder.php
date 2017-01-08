@@ -70,6 +70,15 @@ class FormElementBuilder {
 
   /**
    * @param string $title
+   * @param bool $required
+   * @return array
+   */
+  public static function checkboxField($title, $required = FALSE) {
+    return self::simpleField('checkbox', $title, $required);
+  }
+
+  /**
+   * @param string $title
    * @param array $options
    * @param bool $required
    * @return array
