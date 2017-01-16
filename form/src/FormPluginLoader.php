@@ -48,6 +48,10 @@ class FormPluginLoader extends Psr4PluginLoader {
    * @return FormBuilderInterface
    */
   public function getPluginsForFormId($form_id) {
+    if (!$this->classRegistrationCompleted) {
+      $this->registerClassesForModulesInPsr4Namespace();
+    }
+
     if (isset($this->formIdClassMap[$form_id])) {
       $class = $this->formIdClassMap[$form_id];
       return $this->getPlugin($class->getName());
